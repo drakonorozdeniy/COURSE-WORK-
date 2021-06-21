@@ -25,7 +25,7 @@ signals:
 public:
     explicit Mathemati(QWidget *parent = nullptr);
     ~Mathemati();
-    double A,w,g,a,alpha_0,alpha_2,aAcc,aVel,l,T,x_1,y_1;
+    double A,w,g,a,alpha_0,alpha_2,aAcc,aVel,l,T,x_1,y_1,k,Tconst;
 
 public slots:
     void on_pushButton_2_clicked();

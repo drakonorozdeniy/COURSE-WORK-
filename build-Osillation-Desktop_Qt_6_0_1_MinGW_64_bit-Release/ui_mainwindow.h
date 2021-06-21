@@ -31,8 +31,9 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(510, 182);
+        MainWindow->resize(504, 193);
         MainWindow->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 228, 224)"));
+        MainWindow->setIconSize(QSize(40, 40));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setAutoFillBackground(false);
@@ -73,25 +74,23 @@ public:
         label->setScaledContents(true);
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(450, 130, 51, 51));
+        pushButton_2->setGeometry(QRect(430, 130, 61, 61));
         pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "background-color:black;\n"
 " border-style: solid;\n"
 " border-width:2px;\n"
-" border-radius:25px;\n"
-" border-color: red;\n"
-"\n"
+" border-radius:30px;\n"
+" border-color: rgb(255, 0, 4);\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
 "\n"
-" border-color: black;\n"
-"background-color:balck;\n"
+" border-color: rgb(0, 0, 0);\n"
 "\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
-" border-color:rgb(155, 232, 255)\n"
+" border-color: rgb(255, 0, 4);\n"
 "}\n"
 ""));
         pushButton_2->setIconSize(QSize(40, 40));

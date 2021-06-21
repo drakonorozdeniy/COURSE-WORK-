@@ -19,7 +19,7 @@ CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextr
 INCPATH       = -I../Oscillation -I. -IC:/Qt/6.0.1/mingw81_64/include -IC:/Qt/6.0.1/mingw81_64/include/QtPrintSupport -IC:/Qt/6.0.1/mingw81_64/include/QtWidgets -IC:/Qt/6.0.1/mingw81_64/include/QtGui -IC:/Qt/6.0.1/mingw81_64/include/QtCore -Irelease -I. -IC:/VulkanSDK/1.0.51.0/Include -IC:/Qt/6.0.1/mingw81_64/mkspecs/win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        C:\Qt\6.0.1\mingw81_64\lib\libQt6PrintSupport.a C:\Qt\6.0.1\mingw81_64\lib\libQt6Widgets.a C:\Qt\6.0.1\mingw81_64\lib\libQt6Gui.a C:\Qt\6.0.1\mingw81_64\lib\libQt6Core.a -lmingw32 C:\Qt\6.0.1\mingw81_64\lib\libQt6EntryPoint.a -lshell32  
+LIBS        =        C:\Qt\6.0.1\mingw81_64\lib\libQt6PrintSupport.a C:\Qt\6.0.1\mingw81_64\lib\libQt6Widgets.a C:\Qt\6.0.1\mingw81_64\lib\libQt6Gui.a C:\Qt\6.0.1\mingw81_64\lib\libQt6Core.a release\File_res.o -lmingw32 C:\Qt\6.0.1\mingw81_64\lib\libQt6EntryPoint.a -lshell32  
 QMAKE         = C:\Qt\6.0.1\mingw81_64\bin\qmake.exe
 DEL_FILE      = del
 CHK_DIR_EXISTS= if not exist
@@ -40,7 +40,7 @@ IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = release\File_res.o
 SED           = $(QMAKE) -install sed
 MOVE          = move
 
@@ -82,8 +82,11 @@ DESTDIR_TARGET = release\Osillation.exe
 first: all
 all: Makefile.Release  release/Osillation.exe
 
-release/Osillation.exe: C:/Qt/6.0.1/mingw81_64/lib/libQt6PrintSupport.a C:/Qt/6.0.1/mingw81_64/lib/libQt6Widgets.a C:/Qt/6.0.1/mingw81_64/lib/libQt6Gui.a C:/Qt/6.0.1/mingw81_64/lib/libQt6Core.a C:/Qt/6.0.1/mingw81_64/lib/libQt6EntryPoint.a ui_mainwindow.h ui_mathemati.h $(OBJECTS) 
+release/Osillation.exe: C:/Qt/6.0.1/mingw81_64/lib/libQt6PrintSupport.a C:/Qt/6.0.1/mingw81_64/lib/libQt6Widgets.a C:/Qt/6.0.1/mingw81_64/lib/libQt6Gui.a C:/Qt/6.0.1/mingw81_64/lib/libQt6Core.a C:/Qt/6.0.1/mingw81_64/lib/libQt6EntryPoint.a ui_mainwindow.h ui_mathemati.h $(OBJECTS) release/File_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) $(OBJECTS)  $(LIBS)
+
+release/File_res.o: ../Oscillation/File.rc
+	windres -i ..\Oscillation\File.rc -o release\File_res.o --include-dir=./../Oscillation $(DEFINES)
 
 qmake: FORCE
 	@$(QMAKE) -o Makefile.Release ..\Oscillation\Osillation.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
@@ -95,6 +98,7 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) release\main.o release\mainwindow.o release\mathemati.o release\qcustomplot.o release\qrc_resources.o release\moc_mainwindow.o release\moc_mathemati.o release\moc_qcustomplot.o
+	-$(DEL_FILE) release\File_res.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash

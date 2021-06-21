@@ -22,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap foto (":resourses/images/spider_man5.png");
     ui->pushButton_2->setIcon(QIcon(foto));
 
+
 }
 
 MainWindow::~MainWindow()
@@ -35,16 +36,18 @@ void MainWindow::on_pushButton_clicked()
    hide();
    window = new Mathemati(this);
    connect(window, &Mathemati::firstwindow,this, &MainWindow::show);
+   window->setWindowTitle("Mathematical pendulum");
    window ->show();
 }
 
-void MainWindow::on_pushButton_2_clicked()
 
+
+
+void MainWindow::on_pushButton_2_clicked()
 {
     myProcess->setProgram(QDir::currentPath() + "/Server/Server.exe");
     myProcess->start();
-
-    //SpiderProcess->setProgram(QDir::currentPath() + "/Swing/dist/main.exe");
+    SpiderProcess->setProgram(QDir::currentPath() + "/Spider-man.exe");
     SpiderProcess->start();
-}
 
+}

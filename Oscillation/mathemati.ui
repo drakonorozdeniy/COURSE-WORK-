@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>877</width>
-    <height>480</height>
+    <width>876</width>
+    <height>617</height>
    </rect>
   </property>
   <property name="font">
@@ -24,7 +24,7 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>40</x>
      <y>20</y>
      <width>101</width>
      <height>61</height>
@@ -33,7 +33,13 @@
    <property name="font">
     <font>
      <pointsize>13</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+     <underline>false</underline>
     </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{
@@ -65,7 +71,7 @@ QPushButton:pressed{
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>190</x>
      <y>20</y>
      <width>101</width>
      <height>61</height>
@@ -74,6 +80,12 @@ QPushButton:pressed{
    <property name="font">
     <font>
      <pointsize>13</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+     <kerning>true</kerning>
     </font>
    </property>
    <property name="styleSheet">
@@ -108,7 +120,7 @@ QPushButton:pressed{
      <x>320</x>
      <y>-20</y>
      <width>16</width>
-     <height>501</height>
+     <height>651</height>
     </rect>
    </property>
    <property name="font">
@@ -130,8 +142,8 @@ QPushButton:pressed{
     <rect>
      <x>10</x>
      <y>110</y>
-     <width>291</width>
-     <height>171</height>
+     <width>301</width>
+     <height>271</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -148,7 +160,7 @@ background-color:rgb(197, 220, 255)
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>60</x>
       <y>10</y>
       <width>231</width>
       <height>31</height>
@@ -157,7 +169,7 @@ background-color:rgb(197, 220, 255)
     <property name="font">
      <font>
       <family>Sitka Heading</family>
-      <pointsize>13</pointsize>
+      <pointsize>14</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -185,7 +197,7 @@ background-color:rgb(197, 220, 255)
      <string notr="true">background-color: solid</string>
     </property>
     <property name="maximum">
-     <number>90</number>
+     <number>179</number>
     </property>
     <property name="stepType">
      <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
@@ -207,7 +219,7 @@ background-color:rgb(197, 220, 255)
      <string notr="true">background-color: solid</string>
     </property>
     <property name="maximum">
-     <number>90</number>
+     <number>179</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -238,9 +250,9 @@ background-color:rgb(197, 220, 255)
    <widget class="Line" name="line_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>20</x>
       <y>40</y>
-      <width>231</width>
+      <width>261</width>
       <height>20</height>
      </rect>
     </property>
@@ -252,6 +264,78 @@ background-color:solid
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka Display</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: solid</string>
+    </property>
+    <property name="text">
+     <string>Ускорение свободного падения:</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>226</y>
+      <width>179</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: solid</string>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>25</number>
+    </property>
+    <property name="value">
+     <number>10</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>61</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: solid</string>
+    </property>
+    <property name="minimum">
+     <number>1</number>
+    </property>
+    <property name="maximum">
+     <number>25</number>
+    </property>
+    <property name="stepType">
+     <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
+    </property>
+    <property name="value">
+     <number>10</number>
     </property>
    </widget>
   </widget>
@@ -272,9 +356,9 @@ background-color:solid
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>300</y>
-     <width>291</width>
-     <height>111</height>
+     <y>410</y>
+     <width>301</width>
+     <height>181</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -286,12 +370,40 @@ background-color:solid
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>40</y>
-      <width>131</width>
+      <y>20</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+ background-color: solid;
+ border-style: solid;
+ border-width:1px;
+ border-radius:20px;
+ border-color: rgb(255, 179, 144);
+
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>70</y>
+      <width>211</width>
       <height>31</height>
      </rect>
     </property>
@@ -305,17 +417,22 @@ background-color:solid
      <string notr="true">background-color: solid</string>
     </property>
     <property name="text">
-     <string>Значение T(с):</string>
+     <string>- точное значение периода</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>38</y>
-      <width>111</width>
-      <height>41</height>
+      <x>20</x>
+      <y>70</y>
+      <width>71</width>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QLabel{
@@ -323,12 +440,84 @@ background-color:solid
  border-style: solid;
  border-width:1px;
  border-radius:20px;
- border-color: rgb(65, 255, 211);
+ border-color: rgb(255, 179, 144);
 
 }</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>20</y>
+      <width>181</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka Display</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: solid</string>
+    </property>
+    <property name="text">
+     <string>- формула Гюгенса</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>120</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+ background-color: solid;
+ border-style: solid;
+ border-width:1px;
+ border-radius:20px;
+ border-color: rgb(178, 55, 255);
+
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>120</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sitka Display</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: solid</string>
+    </property>
+    <property name="text">
+     <string>- погрешность </string>
     </property>
    </widget>
   </widget>
@@ -418,6 +607,38 @@ QPushButton:pressed{
     <hint type="destinationlabel">
      <x>111</x>
      <y>270</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBox_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>66</x>
+     <y>341</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>133</x>
+     <y>342</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider_2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBox_2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>351</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>67</x>
+     <y>352</y>
     </hint>
    </hints>
   </connection>

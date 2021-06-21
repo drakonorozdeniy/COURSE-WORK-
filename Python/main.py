@@ -1,4 +1,4 @@
-import sys
+import sys, os
 
 import pygame
 import random
@@ -30,26 +30,26 @@ i=0
 x=400
 y=100
 display = pygame.display.set_mode((display_width, display_height))
-spider_stay = pygame.image.load('images/spiderman_1.png')
+spider_stay = pygame.image.load(res_path('images/spiderman_1.png'))
 spider_fly = pygame.image.load((res_path('images/spider_swing.png')))
 
 spawn_drop=True
 
-bitcoin_foto = pygame.image.load('images/bitcoin.png')
+bitcoin_foto = pygame.image.load(res_path('images/bitcoin.png'))
 
 over_flow=False
 
 pygame.display.set_caption('SPIDER-MAN')
 
-icon=pygame.image.load('images/spider_had.png')
+icon=pygame.image.load(res_path('images/spider_had.png'))
 pygame.display.set_icon(icon)
 
 
 
-pygame.mixer.music.load('sounds/Panthurr - Woof Pt 1 (special version for indyuk).mp3')
+pygame.mixer.music.load(res_path('sounds/Panthurr - Woof Pt 1 (special version for indyuk).mp3'))
 pygame.mixer.music.set_volume(0.03)
 
-coin_sound= pygame.mixer.Sound('sounds/coinsound.mp3')
+coin_sound= pygame.mixer.Sound(res_path('sounds/coinsound.mp3'))
 coin_sound.set_volume(0.07)
 
 
@@ -57,7 +57,7 @@ user_width = 70
 user_height = 79
 user_x = 330
 user_y = 150
-Frame1=pygame.image.load('images/hightscore.png')
+Frame1=pygame.image.load(res_path('images/hightscore.png'))
 magma_height=27
 magma_width=27
 
@@ -85,41 +85,45 @@ dot_height = 30
 dot_x = display_width - 50
 dot_y = display_height - dot_height - 550
 
-dot_img = [pygame.image.load('images/0.png'),pygame.image.load('images/1.png'),pygame.image.load('images/2.png'),
-           pygame.image.load('images/3.png'),pygame.image.load('images/4.png'),pygame.image.load('images/5.png'),
-           pygame.image.load('images/6.png'),pygame.image.load('images/7.png'),pygame.image.load('images/8.png'),
-           pygame.image.load('images/9.png'),pygame.image.load('images/10.png'),pygame.image.load('images/11.png'),
-           pygame.image.load('images/12.png'),pygame.image.load('images/13.png'),pygame.image.load('images/14.png'),
-           pygame.image.load('images/15.png'),pygame.image.load('images/16.png'),pygame.image.load('images/17.png'),
-           pygame.image.load('images/18.png'),pygame.image.load('images/19.png'),pygame.image.load('images/20.png'),
-           pygame.image.load('images/21.png'),pygame.image.load('images/22.png'),pygame.image.load('images/23.png'),
-           pygame.image.load('images/24.png'),]
+dot_img = [pygame.image.load(res_path('images/0.png')),pygame.image.load(res_path('images/1.png')),
+           pygame.image.load(res_path('images/2.png')),pygame.image.load(res_path('images/3.png')),
+           pygame.image.load(res_path('images/4.png')),pygame.image.load(res_path('images/5.png')),
+           pygame.image.load(res_path('images/6.png')),pygame.image.load(res_path('images/7.png')),
+           pygame.image.load(res_path('images/8.png')),pygame.image.load(res_path('images/9.png')),
+           pygame.image.load(res_path('images/10.png')),pygame.image.load(res_path('images/11.png')),
+           pygame.image.load(res_path('images/12.png')),pygame.image.load(res_path('images/13.png')),
+           pygame.image.load(res_path('images/14.png')),pygame.image.load(res_path('images/15.png')),
+           pygame.image.load(res_path('images/16.png')),pygame.image.load(res_path('images/17.png')),
+           pygame.image.load(res_path('images/18.png')),pygame.image.load(res_path('images/19.png')),
+           pygame.image.load(res_path('images/20.png')),pygame.image.load(res_path('images/21.png')),
+           pygame.image.load(res_path('images/22.png')),pygame.image.load(res_path('images/23.png')),
+           pygame.image.load(res_path('images/24.png'))]
 
-coin_img = [pygame.image.load('images/coin_1.png'),pygame.image.load('images/coin_2.png'),
-            pygame.image.load('images/coin_3.png'),pygame.image.load('images/coin_4.png'),
-            pygame.image.load('images/coin_5.png'),pygame.image.load('images/coin_6.png')]
+coin_img = [pygame.image.load(res_path('images/coin_1.png')),pygame.image.load(res_path('images/coin_2.png')),
+            pygame.image.load(res_path('images/coin_3.png')),pygame.image.load(res_path('images/coin_4.png')),
+            pygame.image.load(res_path('images/coin_5.png')),pygame.image.load(res_path('images/coin_6.png'))]
 
-spider_fall_img = pygame.image.load('images/spiderman_fall.png')
+spider_fall_img = pygame.image.load(res_path('images/spiderman_fall.png'))
 
-window_speak=pygame.image.load('images/window.png')
+window_speak=pygame.image.load(res_path('images/window.png'))
 
-window_speak2=pygame.image.load('images/window_2.png')
+window_speak2=pygame.image.load(res_path('images/window_2.png'))
 
-window_speak3=pygame.image.load('images/window_3.png')
+window_speak3=pygame.image.load(res_path('images/window_3.png'))
 
-magmablock=pygame.image.load('images/magmablock.jpg')
+magmablock=pygame.image.load(res_path('images/magmablock.jpg'))
 left=False
 right=False
 Count=0
 scroll=False
 drop =False
 xi=10
-walkRight=[pygame.image.load('images/spiderman_right_2.png'),pygame.image.load('images/spiderman_right_3.png'),
-           pygame.image.load('images/spiderman_right_4.png')]
-walkLeft =[pygame.image.load('images/spiderman_left_2.png'),pygame.image.load('images/spiderman_left_3.png'),
-           pygame.image.load('images/spiderman_left_4.png')]
+walkRight=[pygame.image.load(res_path('images/spiderman_right_2.png')),pygame.image.load(res_path('images/spiderman_right_3.png')),
+           pygame.image.load(res_path('images/spiderman_right_4.png'))]
+walkLeft =[pygame.image.load(res_path('images/spiderman_left_2.png')),pygame.image.load(res_path('images/spiderman_left_3.png')),
+           pygame.image.load(res_path('images/spiderman_left_4.png'))]
 
-bkgd=pygame.image.load('images/wallpaper.jpg').convert()
+bkgd=pygame.image.load(res_path('images/wallpaper.jpg')).convert()
 
 img_coin=0
 line_tick=55
@@ -128,7 +132,6 @@ tick=80
 text="Press Tab to play again, Esc to exit"
 img_counter = 0
 
-wed= pygame.image.load('images/web.png')
 clock = pygame.time.Clock()
 fire1 = [display_width + 30, display_width-770, 40, 40, 1.5]
 fire2 = [display_width + 300, display_width-770, 40, 40, 1.5]
@@ -193,7 +196,7 @@ class Board(pygame.sprite.Sprite):
         self.image.fill((13,13,13))
         self.image.set_colorkey((13,13,13))
         self.rect = self.image.get_rect()
-        self.font = pygame.font.Font("fonts/dpcomic.ttf", 20)
+        self.font = pygame.font.Font(res_path('fonts/dpcomic.ttf'), 20)
 
     def add(self, letter, pos):
         if letter =='A':
@@ -259,10 +262,10 @@ class Cursor(pygame.sprite.Sprite):
             line_print(680,238)
 
 def show_menu():
-    menu_bckgr=pygame.image.load('images/background_2.png')
+    menu_bckgr=pygame.image.load(res_path('images/background_2.png'))
 
-    start_btn = Button(225,60,(0,0,0),(255,0,0),(255,115,0),'fonts/karma.otf')
-    quit_bnt=Button(100, 60,(0,0,0),(255,0,0),(255,115,0),'fonts/karma.otf')
+    start_btn = Button(225,60,(0,0,0),(255,0,0),(255,115,0),res_path('fonts/karma.otf'))
+    quit_bnt=Button(100, 60,(0,0,0),(255,0,0),(255,115,0),res_path('fonts/karma.otf'))
     show=True
     while show:
         for event in pygame.event.get():
@@ -532,7 +535,7 @@ def swing(X,k,not_fall):
 
 def text_score(x,y):
     display.blit(bitcoin_foto,(x,y))
-    print_text(str(reiting), x+29, y+26,font_size=14,font_type='fonts/PressStart2P-Regular.ttf',font_color=(255,255,255))
+    print_text(str(reiting), x+29, y+26,font_size=14,font_type=res_path('fonts/PressStart2P-Regular.ttf'),font_color=(255,255,255))
 
 
 def spider_fall(fall,not_fall1,not_fall2,not_fall3):
@@ -667,7 +670,7 @@ def score(money_x,money_y):
         return False
 
 
-def print_text(message,x,y,font_color=(255,255,255),font_type = "fonts/font.otf",font_size=30):
+def print_text(message,x,y,font_color=(255,255,255),font_type = res_path('fonts/font.otf'),font_size=30):
     font_type= pygame.font.Font(font_type,font_size)
     text=font_type.render(message,True,font_color)
     display.blit(text,(x,y))
@@ -684,12 +687,12 @@ def game_over():
                 quit()
         scroll=False
         ScrollBackground()
-        print_text("GAME OVER",150,60,font_type='fonts/Thirteen-Pixel-Fonts.ttf',font_size=70,font_color=(255,34,24))
+        print_text("GAME OVER",150,60,font_type=res_path('fonts/Thirteen-Pixel-Fonts.ttf'),font_size=70,font_color=(255,34,24))
         Newgame()
-        print_text("Your record : ",250,200, font_type='fonts/Thirteen-Pixel-Fonts.ttf',font_size=40,font_color=(255,223,0))
+        print_text("Your record : ",250,200, font_type=res_path('fonts/Thirteen-Pixel-Fonts.ttf'),font_size=40,font_color=(255,223,0))
         text_score(570,209)
         if not got_name:
-            print_text("Enter your name :",50,300,font_color=(255,0,233),font_type='fonts/Thirteen-Pixel-Fonts.ttf',font_size=40)
+            print_text("Enter your name :",50,300,font_color=(255,0,233),font_type=res_path('fonts/Thirteen-Pixel-Fonts.ttf'),font_size=40)
             name = get_input(482,295)
             if name:
                 got_name = True
@@ -715,7 +718,7 @@ def game_over():
             return True
         if keys[pygame.K_ESCAPE]:
             return False
-        TaibleRanting = Button(120, 35,(138,43,226),(255,140,0),(225,34,24),'fonts/papercut.ttf')
+        TaibleRanting = Button(120, 35,(138,43,226),(255,140,0),(225,34,24),res_path('fonts/papercut.ttf'))
         TaibleRanting.draw(40, 440, 'Records', reiting_score,27)
         pygame.display.update()
         clock.tick(120)
@@ -731,8 +734,8 @@ def reiting_score():
         if (i>8) :
             break
         else:
-            print_text(j_2[i]['username'],x+125,y,font_color=(127,255,212),font_type='fonts/Thirteen-Pixel-Fonts.ttf',font_size=30)
-            print_text(str(j_2[i]['score']),x+350,y,font_color=(0,255,127),font_type='fonts/Thirteen-Pixel-Fonts.ttf',font_size=30)
+            print_text(j_2[i]['username'],x+125,y,font_color=(127,255,212),font_type=res_path('fonts/Thirteen-Pixel-Fonts.ttf'),font_size=30)
+            print_text(str(j_2[i]['score']),x+350,y,font_color=(0,255,127),font_type=res_path('fonts/Thirteen-Pixel-Fonts.ttf'),font_size=30)
             if (i+1)==1  :
                 pygame.draw.rect(display, (255, 215, 0), pygame.Rect(x, y + 5, 30, 30), border_radius=3)
             elif (i+1)==2:
@@ -742,11 +745,11 @@ def reiting_score():
             elif (i+1)==9 :
                 pygame.draw.rect(display, (205, 127, 50), pygame.Rect(x, y + 50, 30, 30), border_radius=3)
 
-        print_text(str(i+1),x+6,y+9,font_color=(0,0,0),font_type='fonts/ka1.ttf',font_size=20)
+        print_text(str(i+1),x+6,y+9,font_color=(0,0,0),font_type=res_path('fonts/ka1.ttf'),font_size=20)
         pygame.draw.rect(display, (0, 0, 0), pygame.Rect(x, y + 5, 31, 31), width=1, border_radius=3)
 
-        print_text(j_2[i]['username'],x+125,y,font_color=(127,255,212),font_type='fonts/Thirteen-Pixel-Fonts.ttf',font_size=30)
-        print_text(str(j_2[i]['score']),x+350,y,font_color=(0,255,127),font_type='fonts/Thirteen-Pixel-Fonts.ttf',font_size=30)
+        print_text(j_2[i]['username'],x+125,y,font_color=(127,255,212),font_type=res_path('fonts/Thirteen-Pixel-Fonts.ttf'),font_size=30)
+        print_text(str(j_2[i]['score']),x+350,y,font_color=(0,255,127),font_type=res_path('fonts/Thirteen-Pixel-Fonts.ttf'),font_size=30)
         y+=47
 
 
