@@ -9,5 +9,3 @@
 :----: | :---: | :---: | :---:
 [Oscillation](./EXE) | [Pendulum](./Pendulum) | [Spider-man](./Spider-man) | [Server](./Server)
 
-
-
